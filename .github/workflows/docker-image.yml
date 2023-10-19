@@ -34,6 +34,6 @@ jobs:
       with:
         access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         secret_key: ${{ secrets.AWS_ACCESS_SECRET_KEY }}
-        repo: ${{ env.MY_AWS_REGION }}
+        repo: $MY_AWS_REGION
         registry: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com
             
