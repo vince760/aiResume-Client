@@ -31,6 +31,6 @@ jobs:
 
     - name: Build, tag, and push image to Amazon ECR
       run: |
-        docker build -t airesume-client/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest .
-        docker push airesume-client/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest
+        docker build -t ${{ steps.login-ecr.outputs.registry }}/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest .
+        docker push ${{ steps.login-ecr.outputs.registry }}/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest
             
