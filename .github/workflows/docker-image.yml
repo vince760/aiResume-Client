@@ -14,6 +14,9 @@ jobs:
 
 
     steps:
+
+    - name: Display vars
+      run: echo "ecr repo - ${{ secrets.MY_ECR_REPOSITORY }} $ECR_REGISTRY/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest"
     
     - name: Check out code
       uses: actions/checkout@v2
@@ -35,5 +38,5 @@ jobs:
         ECR_REPOSITORY: ${{ secrets.MY_ECR_REPOSITORY }}
         IMAGE_TAG: nodejs_demo_image
       run: |
-        docker build -t $ECR_REGISTRY/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest . echo "ecr repo - ${{ secrets.MY_ECR_REPOSITORY }} $ECR_REGISTRY/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest"
+        docker build -t $ECR_REGISTRY/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest .
         docker push $ECR_REGISTRY/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest
