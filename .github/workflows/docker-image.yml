@@ -14,7 +14,7 @@ jobs:
 
 
     steps:
-
+    
     - name: Check out code
       uses: actions/checkout@v2
 
@@ -27,7 +27,7 @@ jobs:
 
     - name: Login to Amazon ECR
       id: login-ecr
-      uses: aws-actions/amazon-ecr-login@v1
+      uses: aws-actions/amazon-ecr-login@v1 
 
     - name: Build, tag, and push image to Amazon ECR
       env:
@@ -35,5 +35,5 @@ jobs:
         ECR_REPOSITORY: ${{ secrets.MY_ECR_REPOSITORY }}
         IMAGE_TAG: nodejs_demo_image
       run: |
-        docker build -t $ECR_REGISTRY/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest .
+        docker build -t $ECR_REGISTRY/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest . echo "ecr repo - ${{ secrets.MY_ECR_REPOSITORY }} $ECR_REGISTRY/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest"
         docker push $ECR_REGISTRY/703058479485.dkr.ecr.us-west-1.amazonaws.com/airesume:latest
