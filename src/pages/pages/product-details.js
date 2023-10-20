@@ -83,7 +83,18 @@ function PagesProductDetails() {
   };
 
   const addEmployment = () => {
-    setEmployment([...employment, employmentData]);
+    let values = [...employment];
+    values.push({
+      jobTitle: "",
+      employer: "",
+      dateRange: "",
+      city: "",
+      description: "",
+      startDate: new Date(),
+      endDate: new Date(),
+    });
+
+    setEmployment(values);
   };
 
   const handleJobUpdate = (index, event) => {
@@ -99,7 +110,16 @@ function PagesProductDetails() {
   };
 
   const addEducation = () => {
-    setEducation([...education, educationData]);
+    let values = [...education];
+    values.push({
+      school: "",
+      degree: "",
+      schoolCity: "",
+      dateRange: "",
+      startDate: new Date(),
+      endDate: new Date(),
+    });
+    setEducation(values);
   };
 
   const handleEducationUpdate = (index, event) => {
