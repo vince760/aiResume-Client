@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as helpers from "./serviceHelpers";
 
-const baseUrl = procss.envREACT_APP_URLENDPOINT || "http://localhost:3001";
+const baseUrl = procss.env.REACT_APP_URLENDPOINT || "http://localhost:3001";
 
 const generateResume = (data) => {
   const config = {
