@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as helpers from "./serviceHelpers";
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = procss.envREACT_APP_URLENDPOINT || "http://localhost:3001";
 
 const generateResume = (data) => {
   const config = {
@@ -20,7 +20,7 @@ const generateResume = (data) => {
 const ping = () => {
   const config = {
     method: "GET",
-    url: `http://localhost:3001/api/ping`,
+    url: `${baseUrl}/api/ping`,
     crossdomain: true,
 
     headers: { "Content-Type": "application/json" },
@@ -34,7 +34,7 @@ const ping = () => {
 const generateJobTitle = (data) => {
   const config = {
     method: "POST",
-    url: `http://localhost:3001/api/skills`,
+    url: `${baseUrl}/api/skills`,
     crossdomain: true,
     data,
     headers: { "Content-Type": "application/json" },
@@ -48,7 +48,7 @@ const generateJobTitle = (data) => {
 const reformatJobDescription = (data) => {
   const config = {
     method: "POST",
-    url: `http://localhost:3001/api/employement`,
+    url: `${baseUrl}/api/employement`,
     crossdomain: true,
     data,
     headers: { "Content-Type": "application/json" },
@@ -62,7 +62,7 @@ const reformatJobDescription = (data) => {
 const generateSummary = (data) => {
   const config = {
     method: "POST",
-    url: `http://localhost:3001/api/summary`,
+    url: `${baseUrl}/api/summary`,
     crossdomain: true,
     data,
     headers: { "Content-Type": "application/json" },
