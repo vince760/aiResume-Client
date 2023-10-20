@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as helpers from "./serviceHelpers";
 
-const baseUrl = process.env.REACT_APP_URLENDPOINT || "http://localhost:3001";
+const baseUrl = "http://localhost:3001";
 
 const generateResume = (data) => {
   const config = {
@@ -20,7 +20,7 @@ const generateResume = (data) => {
 const ping = () => {
   const config = {
     method: "GET",
-    url: `${baseUrl}/api/ping`,
+    url: `http://localhost:3001/api/ping`,
     crossdomain: true,
 
     headers: { "Content-Type": "application/json" },
@@ -34,10 +34,10 @@ const ping = () => {
 const generateJobTitle = (data) => {
   const config = {
     method: "POST",
-    url: `${baseUrl}/api/skills`,
+    url: `http://localhost:3001/api/skills`,
     crossdomain: true,
     data,
-    headers: { "Content-Type": "application/json", "Access-Control-Allow_Origin": "*" },
+    headers: { "Content-Type": "application/json" },
   };
 
   return axios(config)
@@ -62,7 +62,7 @@ const reformatJobDescription = (data) => {
 const generateSummary = (data) => {
   const config = {
     method: "POST",
-    url: `${baseUrl}/api/summary`,
+    url: `http://localhost:3001/api/summary`,
     crossdomain: true,
     data,
     headers: { "Content-Type": "application/json" },

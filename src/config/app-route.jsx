@@ -9,11 +9,11 @@ const AppRoute = [
     path: "*",
     element: <App />,
     children: [
-      { path: "", element: <Navigate to="/pages/resume" /> },
+      { path: "", element: <Navigate to="/resume-builder" /> },
 
       {
-        path: "pages/*",
-        children: [{ path: "resume", element: <PagesProductDetails /> }],
+        path: "resume-builder",
+        children: [{ path: "", element: <PagesProductDetails /> }],
       },
     ],
   },

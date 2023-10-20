@@ -1,6 +1,6 @@
 {
-  "name": "hud",
-  "version": "0.0.0",
+  "name": "resume-builder",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@cyntler/react-doc-viewer": "^1.14.0",
@@ -73,7 +73,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -91,8 +91,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
