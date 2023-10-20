@@ -37,7 +37,7 @@ const generateJobTitle = (data) => {
     url: `${baseUrl}/api/skills`,
     crossdomain: true,
     data,
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "Access-Control-Allow_Origin": "*" },
   };
 
   return axios(config)
